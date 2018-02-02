@@ -110,7 +110,7 @@ class Album extends Component {
     }
 
     handleTimeChange(e) {
-     const newTime = this.formatTime(this.audioElement.duration * e.target.value);
+     const newTime = this.audioElement.duration * e.target.value;
      this.audioElement.currentTime = newTime;
      this.setState({ currentTime: newTime });
    }
@@ -159,6 +159,7 @@ class Album extends Component {
            currentSong={this.state.currentSong} 
            currentTime={this.formatTime(this.audioElement.currentTime)}
            duration={this.formatTime(this.audioElement.duration)}
+           seekValue={this.audioElement.currentTime / this.audioElement.duration}
            currentVolume={this.audioElement.volume}
            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
            handlePrevClick={() => this.handlePrevClick()}
