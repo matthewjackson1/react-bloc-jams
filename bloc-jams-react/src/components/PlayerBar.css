@@ -1,0 +1,53 @@
+.player-bar {
+	background-color: #f3f3f3;
+	margin-top:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+	position:fixed;
+	width:100%;
+	bottom:0;
+}
+
+#buttons {
+	font-size: 32px;
+	padding: 10px 10px;
+	
+}
+
+.player-bar span {
+    padding: 20px 10px;
+}
+
+
+.current-time {
+
+	padding:10px 20px;
+}
+
+.seek-bar {
+	padding: 10px 20px;
+
+}
+
+.total-time {
+
+	padding: 10px 20px;
+
+}
+
+#volume-container {
+    padding: 10px;
+}
+
+.icon {
+	font-size: 24px;
+	padding: 5px;
+}
+
+.volume-seek{
+	margin-top:3px;
+}
+
+#play-pause{
+    width:70px;
+}

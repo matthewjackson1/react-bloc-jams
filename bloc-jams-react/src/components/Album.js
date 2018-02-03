@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import {Bootstrap, ButtonGroup, Button, Col, Row, Table} from 'react-bootstrap';
+import './Album.css';
 
 
 class Album extends Component {
@@ -123,27 +125,40 @@ class Album extends Component {
  
    render() {
      return (
+     	
      	<section className="album">
-        <section id="album-info">
+     	<Row className="album-container">
+     	<Col sm={2}></Col>
+        <Col id="album-info" sm={4}>
            <img id="album-cover-art" src={this.state.album.albumCover} />
-           <div className="album-details">
+        </Col>
+        <Col id="album-songlist" sm={4} className="text-left">
+        <div className="album-details">
              <h1 id="album-title">{this.state.album.title}</h1>
-             <h2 className="artist">{this.state.album.artist}</h2>
+             <h2 className="artist">by {this.state.album.artist}</h2>
              <div id="release-info">{this.state.album.releaseInfo}</div>
-           </div>
-         </section>
-         <table id="song-list">
+        </div>
+        <Table id="song-list" className="text-left" lg={6} striped>
            <colgroup>
              <col id="song-number-column" />
+             <col id="play-controls-column" />
              <col id="song-title-column" />
              <col id="song-duration-column" />
-           </colgroup>  
+           </colgroup> 
+           <thead>
+              <tr>
+                 <th>#</th>
+                 <th></th>
+                 <th>Title</th>
+                 <th>Duration</th>
+              </tr>
+           </thead> 
            <tbody>
            {this.state.album.songs.map( (song, index) => 
        		<tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+       		     <td className="song-number">{index+1}</td> 
                  <td className="song-actions">
                    <button>
-                     <span className="song-number">{index+1}</span>
                      <span className="ion-play"></span>
                      <span className="ion-pause"></span>
                    </button>
@@ -153,7 +168,11 @@ class Album extends Component {
            	</tr>
            	)}
            </tbody>
-         </table>
+         </Table>
+         </Col>
+         <Col sm={2}></Col>
+         </Row>
+
          <PlayerBar 
            isPlaying={this.state.isPlaying} 
            currentSong={this.state.currentSong} 
@@ -167,7 +186,9 @@ class Album extends Component {
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
          />
-       </section>
+         </section> 
+      
+       
      );
    }
  }
