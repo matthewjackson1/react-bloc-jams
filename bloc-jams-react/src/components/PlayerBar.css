@@ -8,7 +8,7 @@
 	bottom:0;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:768px) {
 	.player-bar {
 		position:relative;
 	}
@@ -36,7 +36,7 @@
 }
 
 .seek-bar {
-	padding: 10px 20px;
+	padding: 10px 0px;
 
 }
 

@@ -2,44 +2,17 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 #bloc-jams-title{
-  margin-left:0px;
+  margin-left: 0px;
+  margin-top: 16px;
 }
 
 #sticky-header {
   background-color:#f3f3f3;
   margin-bottom:20px;
-  /*
-  position:fixed;
-  top:0;
-  width:100%;
-  */
 }
 
-#main-container {
-  /*padding-top:80px;*/
-
-}
 
 #header-nav {
   line-height: 70px;
@@ -54,7 +27,3 @@ a:hover {
   text-decoration:none;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}

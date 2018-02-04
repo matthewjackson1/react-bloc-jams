@@ -23,8 +23,8 @@ import './PlayerBar.css';
 		         </Col>
 		     </Row>
 		     <Row id="time-control">                                                                    
-		           <Col className="time-text current-time text-right" sm={2}>{this.props.currentTime}</Col>
-		           <Col sm={8}>
+		           <Col className="time-text current-time text-right" xs={2} sm={2}>{this.props.currentTime}</Col>
+		           <Col sm={8} xs={8}>
 		           <input 
 		             type="range" 
 		             className="seek- time-seek"
@@ -35,14 +35,14 @@ import './PlayerBar.css';
 		             onChange={this.props.handleTimeChange}
 		           />  
 		           </Col> 
-		           <Col className="time-text total-time text-left" sm={2}>{this.props.duration}</Col> 
+		           <Col className="time-text total-time text-left" xs={2} sm={2}>{this.props.duration}</Col> 
 		     </Row>
 	        </Col> 
 
 	         <Col id="volume-control" sm={3}>
 	           <Row id="volume-container" className="align-middle">
-		           <Col className="icon ion-volume-low" sm={2}></Col>
-		           <Col sm={8}>
+		           <Col className="icon ion-volume-low" xs={2} sm={2}></Col>
+		           <Col sm={8} xs={8}>
 		           <input type="range" 
 		           className="seek-bar volume-seek" 
 		           value={this.props.currentVolume || 0}
@@ -52,7 +52,7 @@ import './PlayerBar.css';
 		           onChange={this.props.handleVolumeChange}
 		            />
 		            </Col>
-		           <Col className="icon ion-volume-high" sm={2}></Col>
+		           <Col className="icon ion-volume-high" xs={2} sm={2}></Col>
                </Row>
 	         </Col>
          </Row>

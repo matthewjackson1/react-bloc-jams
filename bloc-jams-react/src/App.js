@@ -16,7 +16,7 @@ class App extends Component {
         <Grid fluid>
           <Row id="sticky-header">
             <Grid>
-              <Row id="testing">
+              <Row>
                 <header>
                   <Col sm={6} xs={6} className="text-left"><h1 id="bloc-jams-title">Bloc Jams</h1></Col>
                   <Col sm={6} xs={6} className="text-right">

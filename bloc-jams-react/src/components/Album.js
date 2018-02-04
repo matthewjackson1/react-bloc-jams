@@ -134,6 +134,22 @@ class Album extends Component {
      this.audioElement.volume = newVol;
      this.setState({ currentVolume: newVol });
    }
+
+   renderButtons(song, index) {
+      if (this.state.currentSong === song) {
+      	if (this.state.isPlaying === true) {
+      		return <span className="ion-pause"></span>;
+      	}
+      	else{
+            return <span className="ion-play"></span>;
+      	}
+
+      }
+      else {
+     		return <div><span className="songNumber">{index+1}</span> <span className="ion-play hoverSongRowControl"></span></div>;
+       }
+      
+   }
   	
 
 
@@ -172,18 +188,9 @@ class Album extends Component {
            {this.state.album.songs.map( (song, index) => 
        		<tr className="song" key={index} 
        		onClick={() => this.handleSongClick(song)}
-       		//onMouseEnter={(song)=> this.handleSongHoverStart(song)}
-       		//onMouseLeave={()=> this.handleSongHoverEnd()}
             >
                 <td className="song-actions">
-                {/* if the song is playing and the song is the current song then show the pause button */}
-   	            { this.state.isPlaying && song === this.state.currentSong ? <Button><span className="ion-pause" id="songRowControl"></span></Button> : "" }
-   	            {/*if the song is NOT playing and the song is the current song then show the play button*/}
-   	            { !this.state.isPlaying && song === this.state.currentSong ? <Button><span className="ion-play" id="songRowControl"></span></Button> : "" }
-   	            {/* show the song number*/}
-   	            {index+1}
-   	            {/*if the song is not the current song, show a play button*/}
-   	            { song !== this.state.currentSong ? <Button><span className="ion-play" id="hoverSongRowControl"></span></Button> : "" }
+                {this.renderButtons(song, index)}
                 </td>
            		<td className="song-title">{song.title}</td>
            		<td className="song-duration">{this.formatTime(song.duration)}</td>
