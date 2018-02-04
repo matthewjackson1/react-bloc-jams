@@ -4,7 +4,7 @@ import './App.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
-import {Bootstrap, Grid, Col, Row} from 'react-bootstrap';
+import {Bootstrap, Grid, Col, Row, Button} from 'react-bootstrap';
 
 
 
@@ -14,23 +14,26 @@ class App extends Component {
     return (
       <div className="App">
         <Grid fluid>
-        <Row id="sticky-header">
-        <header>
-        <Col sm={8}><h1>Bloc Jams</h1></Col>
-        <Col sm={4}>
-          <nav id="header-nav">
-            <Link className="header-link" to='/'>Home</Link>
-            <Link className="header-link" to='/library'>Library</Link>  
-          </nav>
-        </Col>
-          
-        </header>
-        </Row>
-        <main id="main-container">
-          <Route exact path="/" component={Landing} />
-          <Route path="/library" component={Library} />
-          <Route path="/album/:slug" component={Album} />
-        </main>
+          <Row id="sticky-header">
+            <Grid>
+              <Row id="testing">
+                <header>
+                  <Col sm={6} xs={6} className="text-left"><h1 id="bloc-jams-title">Bloc Jams</h1></Col>
+                  <Col sm={6} xs={6} className="text-right">
+                    <nav id="header-nav">
+                      <Link className="header-link" to='/'><Button>Home</Button></Link>
+                      <Link className="header-link" to='/library'><Button>Library</Button></Link>  
+                    </nav>
+                  </Col>
+                </header>
+              </Row>
+            </Grid>
+          </Row>
+          <main id="main-container">
+            <Route exact path="/" component={Landing} />
+            <Route path="/library" component={Library} />
+            <Route path="/album/:slug" component={Album} />
+          </main>
         </Grid>
       </div>
     );
