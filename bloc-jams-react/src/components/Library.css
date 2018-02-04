@@ -1,0 +1,20 @@
+.library-album-pic {
+	width:100%;
+}
+
+.library-album {
+   font-size: 18px;
+}
+
+.album-info-1 {
+   color:#333;
+   margin-top:5px;
+}
+
+.album-name {
+	font-weight:bold;
+}
+
+.album-info-2 {
+   color:#333;
+}

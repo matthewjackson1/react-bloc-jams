@@ -12,3 +12,16 @@ max-width:100%;
 .album-details {
  padding-bottom:20px;
 }
+
+#album-title {
+margin-bottom: 0px;
+font-weight: bold;
+}
+
+.artist {
+	font-size: 24px;
+}
+
+#release-info {
+	font-style: italic;
+}
