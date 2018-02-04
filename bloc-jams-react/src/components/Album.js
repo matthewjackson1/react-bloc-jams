@@ -100,9 +100,10 @@ class Album extends Component {
        this.setState({isHovering: false});
     }
 
-     handleSongHoverStart() {
+     handleSongHoverStart(song) {
        console.log("entered");
        this.setState({isHovering:true});
+       console.log(song);
      }
 
      handlePrevClick() {
@@ -134,7 +135,6 @@ class Album extends Component {
      this.setState({ currentVolume: newVol });
    }
   	
-
 
 
  
@@ -172,18 +172,19 @@ class Album extends Component {
            {this.state.album.songs.map( (song, index) => 
        		<tr className="song" key={index} 
        		onClick={() => this.handleSongClick(song)}
-       		onMouseEnter={()=> this.handleSongHoverStart()}
-       		onMouseLeave={()=> this.handleSongHoverEnd()}
+       		//onMouseEnter={(song)=> this.handleSongHoverStart(song)}
+       		//onMouseLeave={()=> this.handleSongHoverEnd()}
             >
                 <td className="song-actions">
-   	             {//this.state.isHovering ? 
-	             //song === this.state.currentSong 
-	             //this.state.isPlaying 
-	             }
-		            <Button><span className={this.state.isPlaying ? "ion-pause" : "ion-play"} id="songRowControl"></span></Button>
-				    <Button><span className="ion-pause" id="songRowControl"></span></Button>
-		            <span className="song-number">{index+1}</span>
-                 </td>
+                {/* if the song is playing and the song is the current song then show the pause button */}
+   	            { this.state.isPlaying && song === this.state.currentSong ? <Button><span className="ion-pause" id="songRowControl"></span></Button> : "" }
+   	            {/*if the song is NOT playing and the song is the current song then show the play button*/}
+   	            { !this.state.isPlaying && song === this.state.currentSong ? <Button><span className="ion-play" id="songRowControl"></span></Button> : "" }
+   	            {/* show the song number*/}
+   	            {index+1}
+   	            {/*if the song is not the current song, show a play button*/}
+   	            { song !== this.state.currentSong ? <Button><span className="ion-play" id="hoverSongRowControl"></span></Button> : "" }
+                </td>
            		<td className="song-title">{song.title}</td>
            		<td className="song-duration">{this.formatTime(song.duration)}</td>
            	</tr>
