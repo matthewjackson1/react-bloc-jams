@@ -5,33 +5,34 @@ import { Route, Link } from 'react-router-dom';
 
 const Landing = () => (
   <Grid className="landing">
-    <h1 className="hero-title">Turn the music up!</h1>
+    <Row className="hero-row">
+      <Col id="hero-music" md={12}>
+        <div id="hero-info">
+          <h1 id="hero-title">Welcome to the new home of music</h1>
+          <Link className="header-link" to='/library'>
+            <Button bsStyle="primary" bsSize="large">
+              Explore Music Library
+            </Button>
+          </Link>
+        </div>
+      </Col>
+
+    </Row>
     <Row className="selling-points">
-      <Col className="point" sm={4}>
-        <span className="home-icon ion-music-note"></span>
-        <h2 className="point-title">Choose your music</h2>
-        <p className="point-description">The world is full of music; why should you have to listen to music that someone else chose?</p>
+      <Col className="point-pic" sm={4}>
+      <h3 className="point-title">Choose from millions of tracks</h3>
+      <img className="point-image" src="../assets/images/listen.jpg"/>
       </Col>
-      <Col className="point" sm={4}>
-        <span className="home-icon ion-radio-waves"></span>
-        <h2 className="point-title">Unlimited, streaming, ad&#x2011;free</h2>
-        <p className="point-description">No arbitrary limits. No distractions.</p>
+      <Col className="point-pic" sm={4}>
+      <h3 className="point-title">Unlimited & ad-free forever</h3> 
+      <img className="point-image" src="../assets/images/crowd.jpg"/> 
       </Col>
-      <Col className="point" sm={4}>
-        <span className="home-icon ion-iphone"></span>
-        <h2 className="point-title">Mobile enabled</h2>
-        <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
+      <Col className="point-pic" sm={4}>
+      <h3 className="point-title">Listen anywhere, any time</h3>
+      <img className="point-image" src="../assets/images/mobile.jpg"/>
       </Col>
     </Row>
-    <Row className="cta">
-      <Col>
-      <Link className="header-link" to='/library'>
-      <Button bsStyle="primary" bsSize="large">
-      Explore Music Library
-      </Button>
-      </Link>
-      </Col>
-    </Row>
+    
 
   </Grid>
 );

@@ -1,19 +1,23 @@
 .player-bar {
-	background-color: #f3f3f3;
+	background-color: #1c1c1c;
+	color: white;
 	margin-top:20px;
 	padding-top:10px;
+	margin-left: auto;
+	margin-right: auto;	
 	padding-bottom:10px;
 	position:fixed;
 	width:100%;
 	bottom:0;
 }
 
-@media screen and (max-width:768px) {
-	.player-bar {
-		position:relative;
-	}
+#playback-controls {
+	margin: 0 auto;
 }
 
+.player-bar div {
+	display: inline-block;
+}
 .time-text{
   font-weight:bold;
   font-size:16px;
@@ -21,12 +25,10 @@
 
 #buttons {
 	font-size: 32px;
-	padding: 10px 10px;
-	
 }
 
 .player-bar span {
-    padding: 20px 10px;
+	padding: 5px;
 }
 
 
@@ -35,10 +37,6 @@
 	padding:10px 10px;
 }
 
-.seek-bar {
-	padding: 10px 0px;
-
-}
 
 .total-time {
 
@@ -46,13 +44,9 @@
 
 }
 
-#volume-container {
-    padding: 10px;
-}
-
-#volume-control {
-
-	top:15px;
+.seeker {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .icon {
@@ -61,13 +55,27 @@
 }
 
 .volume-seek{
-	margin-top:3px;
+	width: 100%;
 }
 
 .time-seek {
 	margin-top:13px;
+	width: 100%;
 }
 
 #play-pause{
-    width:70px;
+	display: inline-block;
+	width: 50px;
+}
+
+#time-indicator {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 576px) {
+    #buttons {
+       width: 100%
+	}
+
 }

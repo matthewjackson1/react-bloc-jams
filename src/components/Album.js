@@ -161,11 +161,11 @@ class Album extends Component {
      	
      	<section className="album">
      	<Row className="album-container">
-     	<Col sm={2}></Col>
-        <Col id="album-info" sm={4}>
+     	
+        <Col id="album-info" sm={6}>
            <img id="album-cover-art" src={this.state.album.albumCover} />
         </Col>
-        <Col id="album-songlist" sm={4} className="text-left">
+        <Col id="album-songlist" sm={6} className="text-left">
         <div className="album-details">
              <h1 id="album-title">{this.state.album.title}</h1>
              <h2 className="artist">by {this.state.album.artist}</h2>

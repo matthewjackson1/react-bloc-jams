@@ -10,6 +10,7 @@
 .album-info-1 {
    color:#333;
    margin-top:5px;
+   font-size: 20px;
 }
 
 .album-name {
@@ -17,5 +18,12 @@
 }
 
 .album-info-2 {
-   color:#333;
+   color: #8B8D92;;
+   
+}
+
+.album-numsongs {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #8B8D92;
 }

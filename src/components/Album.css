@@ -1,17 +1,16 @@
 .album-container {
-	padding-bottom:100px;
+	padding-bottom:250px;
 }
 
-@media screen and (max-width: 768px) {
-	.album-container {
-		padding-bottom: 40px; 
-	}
-}
 
 @media screen and (min-width: 768px) {
 	.container-fluid {
 		padding-left: 0px;
 	}
+}
+
+#album-songlist {
+	padding: 20px;
 }
 
 #album-cover-art {
